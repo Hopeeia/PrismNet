@@ -26,9 +26,10 @@ bioRxiv preprint: ([https://www.biorxiv.org/content/10.1101/2020.05.05.078774v1]
 
 ### Requirements
  
- - Python 3.6
- - PyTorch 1.1.0, with NVIDIA CUDA Support
+ - Python 3.10+
+ - PyTorch 2.3.0, with NVIDIA CUDA12.1 Support
  - pip
+ - anaconda3
 
 ### Installation
 Clone repository: 
@@ -71,7 +72,7 @@ tools/gdata_bin.sh
 
 To train one single protein model from scratch, run
 ```
-exp/EXP_NAME/train.sh pu PrismNet TIA1_Hela clip_data 
+exp/prismnet/train.sh pu PrismNet TIA1_Hela clip_data 
 ```
 where you replace `TIA1_Hela` with the name of the data file you want to use, you replace EXP_NAME with a specific name of this experiment. Hyper-parameters could be tuned in `exp/prismnet/train.sh`. For available training options, please take a look at `tools/train.py`.
 
@@ -82,7 +83,7 @@ tensorboard --logdir exp/EXP_NAME/out/tfb
 
 To train all the protein models, run
 ```
-exp/EXP_NAME/train_all.sh
+exp/prismnet/train_all.sh
 ```
 
 ### Evaluation
